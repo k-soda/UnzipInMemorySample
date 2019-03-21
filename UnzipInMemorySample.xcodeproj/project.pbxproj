@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5036066A2243BD5A002AD980 /* ZipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503606692243BD5A002AD980 /* ZipManager.swift */; };
 		50380CF922438D2B006E9040 /* Archive.zip in Resources */ = {isa = PBXBuildFile; fileRef = 50380CF822438D2B006E9040 /* Archive.zip */; };
 		50A8814821F74DB30034BBA6 /* ZIPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A8814721F74DB30034BBA6 /* ZIPFoundation.framework */; };
 		50CB77F121F74B7D002C8A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77F021F74B7D002C8A94 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		503606692243BD5A002AD980 /* ZipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipManager.swift; sourceTree = "<group>"; };
 		50380CF822438D2B006E9040 /* Archive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Archive.zip; sourceTree = "<group>"; };
 		50A8814721F74DB30034BBA6 /* ZIPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZIPFoundation.framework; path = Carthage/Build/iOS/ZIPFoundation.framework; sourceTree = "<group>"; };
 		50CB77ED21F74B7D002C8A94 /* UnzipInMemorySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnzipInMemorySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				50CB77F021F74B7D002C8A94 /* AppDelegate.swift */,
 				50CB77F221F74B7D002C8A94 /* ViewController.swift */,
 				50CB77F421F74B7D002C8A94 /* Main.storyboard */,
+				503606692243BD5A002AD980 /* ZipManager.swift */,
 				50CB77F721F74B7D002C8A94 /* Assets.xcassets */,
 				50CB77F921F74B7D002C8A94 /* LaunchScreen.storyboard */,
 				50CB77FC21F74B7D002C8A94 /* Info.plist */,
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CB77F321F74B7D002C8A94 /* ViewController.swift in Sources */,
+				5036066A2243BD5A002AD980 /* ZipManager.swift in Sources */,
 				50CB77F121F74B7D002C8A94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,17 +7,12 @@
 //
 
 import UIKit
-import ZIPFoundation
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var nextButton: UIBarButtonItem!
-    
-    var archive: Archive?
-    var entries = [Entry]()
-    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,56 +21,26 @@ class ViewController: UIViewController {
             return
         }
         
-        archive = Archive(url: url, accessMode: .read)
-        
-        guard let archive = archive else {
-            return
-        }
-        
-        let iterator = archive.makeIterator()
-        
-        entries = iterator.map { $0 }
-        
-        if entries.isEmpty {
-            return
-        }
-        
-        do {
-            try archive.extract(entries.first!, consumer: { data in
-                imageView.image = UIImage(data: data)
-            })
-        } catch {
-            debugPrint(error.localizedDescription)
+        ZipManager.shared.read(url: url) { data in
+            self.imageView.image = UIImage(data: data)
         }
     }
     
     @IBAction func didTapBackButton(_ sender: Any) {
-        let newIndex = index - 1
-        guard 0 <= newIndex else {
-            return
+        ZipManager.shared.goBack { data in
+            self.imageView.image = UIImage(data: data)
         }
-        index = newIndex
-        do {
-            try archive?.extract(entries[index], consumer: { data in
-                imageView.image = UIImage(data: data)
-            })
-        } catch {
-            debugPrint(error.localizedDescription)
-        }
+        
+        backButton.isEnabled = ZipManager.shared.canGoBack()
+        nextButton.isEnabled = ZipManager.shared.canGoNext()
     }
     
     @IBAction func didTapNextButton(_ sender: Any) {
-        let newIndex = index + 1
-        guard newIndex < entries.count else {
-            return
+        ZipManager.shared.goNext { data in
+            self.imageView.image = UIImage(data: data)
         }
-        index = newIndex
-        do {
-            try archive?.extract(entries[index], consumer: { data in
-                imageView.image = UIImage(data: data)
-            })
-        } catch {
-            debugPrint(error.localizedDescription)
-        }
+        
+        backButton.isEnabled = ZipManager.shared.canGoBack()
+        nextButton.isEnabled = ZipManager.shared.canGoNext()
     }
 }
