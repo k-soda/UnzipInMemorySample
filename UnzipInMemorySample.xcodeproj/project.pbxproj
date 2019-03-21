@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50380CF922438D2B006E9040 /* Archive.zip in Resources */ = {isa = PBXBuildFile; fileRef = 50380CF822438D2B006E9040 /* Archive.zip */; };
 		50A8814821F74DB30034BBA6 /* ZIPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A8814721F74DB30034BBA6 /* ZIPFoundation.framework */; };
 		50CB77F121F74B7D002C8A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77F021F74B7D002C8A94 /* AppDelegate.swift */; };
 		50CB77F321F74B7D002C8A94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB77F221F74B7D002C8A94 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50380CF822438D2B006E9040 /* Archive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Archive.zip; sourceTree = "<group>"; };
 		50A8814721F74DB30034BBA6 /* ZIPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZIPFoundation.framework; path = Carthage/Build/iOS/ZIPFoundation.framework; sourceTree = "<group>"; };
 		50CB77ED21F74B7D002C8A94 /* UnzipInMemorySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnzipInMemorySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CB77F021F74B7D002C8A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50380CF722438D0E006E9040 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50380CF822438D2B006E9040 /* Archive.zip */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		50A8814621F74DB20034BBA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		50CB77EF21F74B7D002C8A94 /* UnzipInMemorySample */ = {
 			isa = PBXGroup;
 			children = (
+				50380CF722438D0E006E9040 /* Resources */,
 				50CB77F021F74B7D002C8A94 /* AppDelegate.swift */,
 				50CB77F221F74B7D002C8A94 /* ViewController.swift */,
 				50CB77F421F74B7D002C8A94 /* Main.storyboard */,
@@ -137,6 +148,7 @@
 			files = (
 				50CB77FB21F74B7D002C8A94 /* LaunchScreen.storyboard in Resources */,
 				50CB77F821F74B7D002C8A94 /* Assets.xcassets in Resources */,
+				50380CF922438D2B006E9040 /* Archive.zip in Resources */,
 				50CB77F621F74B7D002C8A94 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
