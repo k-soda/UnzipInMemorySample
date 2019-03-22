@@ -9,7 +9,7 @@
 import Foundation
 import ZIPFoundation
 
-class ZipManager {
+final class ZipManager {
     
     enum Result {
         case success
@@ -40,8 +40,7 @@ class ZipManager {
             return .failure
         }
         
-        index = 0
-        return goTo(index: index, process: process)
+        return goTo(index: 0, process: process)
     }
     
     func canGoBack() -> Bool {
@@ -66,8 +65,7 @@ class ZipManager {
             return .failure
         }
         
-        index -= 1
-        return goTo(index: index, process: process)
+        return goTo(index: index - 1, process: process)
     }
     
     @discardableResult
@@ -76,20 +74,17 @@ class ZipManager {
             return .failure
         }
         
-        index += 1
-        return goTo(index: index, process: process)
+        return goTo(index: index + 1, process: process)
     }
     
     @discardableResult
     func goFirst(process: Process? = nil) -> Result {
-        index = 0
-        return goTo(index: index, process: process)
+        return goTo(index: 0, process: process)
     }
     
     @discardableResult
     func goLast(process: Process? = nil) -> Result {
-        index = entries.count - 1
-        return goTo(index: index, process: process)
+        return goTo(index: entries.count - 1, process: process)
     }
 }
 
@@ -99,6 +94,7 @@ private extension ZipManager {
         do {
             _ = try archive?.extract(entries[index], consumer: { data in
                 process?(data)
+                self.index = index
             })
         } catch {
             debugPrint(error.localizedDescription)

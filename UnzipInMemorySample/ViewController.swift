@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBOutlet weak var nextButton: UIBarButtonItem!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var backButton: UIBarButtonItem!
+    @IBOutlet private weak var nextButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
